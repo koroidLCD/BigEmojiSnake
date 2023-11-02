@@ -15,6 +15,8 @@
 		04F1ABED2AF3BE5D000A55CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F1ABEB2AF3BE5D000A55CE /* Main.storyboard */; };
 		04F1ABEF2AF3BE5E000A55CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F1ABEE2AF3BE5E000A55CE /* Assets.xcassets */; };
 		04F1ABF22AF3BE5E000A55CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F1ABF02AF3BE5E000A55CE /* LaunchScreen.storyboard */; };
+		04F1ABFA2AF3BEAF000A55CE /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1ABF92AF3BEAF000A55CE /* GameManager.swift */; };
+		04F1ABFC2AF3C8A9000A55CE /* EmojiShapeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1ABFB2AF3C8A9000A55CE /* EmojiShapeNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		04F1ABEC2AF3BE5D000A55CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04F1ABEE2AF3BE5E000A55CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04F1ABF12AF3BE5E000A55CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04F1ABF92AF3BEAF000A55CE /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		04F1ABFB2AF3C8A9000A55CE /* EmojiShapeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiShapeNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 		04F1ABE02AF3BE5D000A55CE /* BigEmojiSnake */ = {
 			isa = PBXGroup;
 			children = (
+				04F1ABF82AF3BEA4000A55CE /* New Group */,
 				04F1ABE12AF3BE5D000A55CE /* AppDelegate.swift */,
 				04F1ABE32AF3BE5D000A55CE /* GameScene.sks */,
 				04F1ABE52AF3BE5D000A55CE /* Actions.sks */,
@@ -67,8 +72,17 @@
 				04F1ABEB2AF3BE5D000A55CE /* Main.storyboard */,
 				04F1ABEE2AF3BE5E000A55CE /* Assets.xcassets */,
 				04F1ABF02AF3BE5E000A55CE /* LaunchScreen.storyboard */,
+				04F1ABF92AF3BEAF000A55CE /* GameManager.swift */,
+				04F1ABFB2AF3C8A9000A55CE /* EmojiShapeNode.swift */,
 			);
 			path = BigEmojiSnake;
+			sourceTree = "<group>";
+		};
+		04F1ABF82AF3BEA4000A55CE /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +159,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F1ABE82AF3BE5D000A55CE /* GameScene.swift in Sources */,
+				04F1ABFA2AF3BEAF000A55CE /* GameManager.swift in Sources */,
+				04F1ABFC2AF3C8A9000A55CE /* EmojiShapeNode.swift in Sources */,
 				04F1ABEA2AF3BE5D000A55CE /* GameViewController.swift in Sources */,
 				04F1ABE22AF3BE5D000A55CE /* AppDelegate.swift in Sources */,
 			);
