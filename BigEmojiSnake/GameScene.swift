@@ -2,7 +2,11 @@
 import SpriteKit
 import GameplayKit
 
-class Point {
+class Point: Equatable {
+    static func == (lhs: Point, rhs: Point) -> Bool {
+            return lhs.x == rhs.x && lhs.y == rhs.y
+        }
+    
     var x: Int
     var y: Int
     
@@ -17,17 +21,17 @@ class Point {
 }
 
 class GameScene: SKScene {
-    // Main screen
-    private var gameLogo: SKLabelNode!
-    private var bestScore: SKLabelNode!
-    private var playButton: SKShapeNode!
-    // Died screen
+    private var gameLogo: SKSpriteNode!
+    private var playButton: SKSpriteNode!
     private var youDiedText: SKLabelNode!
     
-    // Game screen
+    private var totalScore: SKLabelNode!
+    private var totalScoreView: SKSpriteNode!
+    
     private var game: GameManager!
     var currentScore: SKLabelNode!
-    private var gameBG: SKShapeNode!
+    private var currentScoreView: SKSpriteNode!
+    private var gameBG: SKSpriteNode!
     var gameArray: [(node: EmojiShapeNode, point: Point)] = []
     
     private var scaleOutAction: SKAction!
@@ -36,6 +40,10 @@ class GameScene: SKScene {
     private var moveBackFromTopAction: SKAction!
     
     override func didMove(to view: SKView) {
+        let background = SKSpriteNode(imageNamed: "background")
+        background.position = CGPoint(x: 0, y: 0)
+        background.size = CGSize(width: size.width, height: size.height)
+        addChild(background)
         scaleInAction = SKAction.init(named: "ScaleIn")
         scaleOutAction = SKAction.init(named: "ScaleOut")
         moveOutsideTopAction = SKAction.init(named: "MoveOutsideTop")
@@ -84,51 +92,73 @@ class GameScene: SKScene {
     private func startGame() {
         self.gameBG.setScale(0)
         self.currentScore.setScale(0)
+        self.currentScoreView.setScale(0)
         
         playButton.run(scaleOutAction) {
             self.playButton.isHidden = true
+        }
+        
+        totalScore.run(scaleOutAction) {
+            self.totalScore.isHidden = true
+        }
+        
+        totalScoreView.run(scaleOutAction) {
+            self.totalScoreView.isHidden = true
         }
 
         gameLogo.run(moveOutsideTopAction) {
             self.gameLogo.isHidden = true
             self.gameBG.isHidden = false
             self.currentScore.isHidden = false
+            self.currentScoreView.isHidden = false
+            self.currentScoreView.run(self.scaleInAction)
             self.currentScore.run(self.scaleInAction)
             self.gameBG.run(self.scaleInAction) {
-                // Init game
                 self.game.initGame()
             }
         }
     }
     
     private func initializeMenu() {
-        //Create game title
-        gameLogo = SKLabelNode(fontNamed: "Avenir Next")
+        gameLogo = SKSpriteNode(imageNamed: "logo")
         gameLogo.zPosition = 1
-        gameLogo.position = CGPoint(x: 0, y: (frame.size.height / 2) - 200)
-        gameLogo.fontSize = 60
-        gameLogo.text = "SNAKE"
-        gameLogo.fontColor = SKColor.red
+        gameLogo.setScale(0.5)
+        gameLogo.position = CGPoint(x: 0, y: (frame.size.height / 2) - 350)
         self.addChild(gameLogo)
-        //Create play button
-        playButton = SKShapeNode()
+        
+        totalScoreView = SKSpriteNode(imageNamed: "clearTable")
+        totalScoreView.size = CGSize(width: (view?.frame.width)!*0.9, height: (view?.frame.width)!*0.3)
+        totalScoreView.zPosition = 1
+        totalScoreView.position = CGPoint(x: 0, y: 6)
+        self.addChild(totalScoreView)
+        
+        totalScore = SKLabelNode(text: "Total Score: \(ScoreManager.shared.getPoints())")
+        totalScore.fontName = "MarkerFelt-Wide"
+        totalScore.fontSize = 40
+        totalScore.zPosition = 2
+        totalScore.position = CGPoint(x: 0, y: 0)
+        totalScore.color = .black
+        self.addChild(totalScore)
+        
+        playButton = SKSpriteNode(imageNamed: "btn_play")
         playButton.name = "play_button"
         playButton.zPosition = 1
         playButton.position = CGPoint(x: 0, y: (frame.size.height / -2) + 200)
-        playButton.fillColor = SKColor.green
-        let topCorner = CGPoint(x: -50, y: 50)
-        let bottomCorner = CGPoint(x: -50, y: -50)
-        let middle = CGPoint(x: 50, y: 0)
-        let path = CGMutablePath()
-        path.addLine(to: topCorner)
-        path.addLines(between: [topCorner, bottomCorner, middle])
-        playButton.path = path
+        playButton.setScale(0.3)
         self.addChild(playButton)
     }
     
     private func initializeGameView() {
-        currentScore = SKLabelNode(fontNamed: "Avenir Next")
-        currentScore.zPosition = 1
+        
+        currentScoreView = SKSpriteNode(imageNamed: "clearTable")
+        currentScoreView.size = CGSize(width: (view?.frame.width)!*0.9, height: (view?.frame.width)!*0.3)
+        currentScoreView.zPosition = 1
+        currentScoreView.position = CGPoint(x: 0, y:  (frame.size.height / -2) + 66)
+        currentScoreView.isHidden = true
+        self.addChild(currentScoreView)
+        
+        currentScore = SKLabelNode(fontNamed: "MarkerFelt-Wide")
+        currentScore.zPosition = 2
         currentScore.position = CGPoint(x: 0, y: (frame.size.height / -2) + 60)
         currentScore.fontSize = 40
         currentScore.isHidden = true
@@ -140,9 +170,9 @@ class GameScene: SKScene {
         let cellSize = width  / CGFloat(game.numCols)
         let height = cellSize * CGFloat(game.numRows)
 
+        
         let rect = CGRect(x: -width / 2, y: -height / 2, width: width, height: height)
-        gameBG = SKShapeNode(rect: rect, cornerRadius: 0.02)
-        gameBG.fillColor = SKColor.darkGray
+        gameBG = SKSpriteNode(color: UIColor(cgColor: CGColor(red: 0, green: 1, blue: 0, alpha: 0.3)), size: CGSize(width: rect.width, height: rect.height))
         gameBG.zPosition = 2
         gameBG.isHidden = true
         self.addChild(gameBG)
@@ -150,11 +180,9 @@ class GameScene: SKScene {
         createGameBoard(width: width, height: height, cellSize: cellSize)
     }
     
-    //create a game board, initialize array of cells
     private func createGameBoard(width: CGFloat, height: CGFloat, cellSize: CGFloat) {
         var x = -width / 2 + cellSize / 2
         var y = height / 2 - cellSize / 2
-        //loop through rows and columns, create cells
         for i in 0...game.numRows - 1 {
             for j in 0...game.numCols - 1 {
                 let emojiNode = EmojiShapeNode(id: -1, emoji: " ")
@@ -162,13 +190,10 @@ class GameScene: SKScene {
                 emojiNode.strokeColor = SKColor.black
                 emojiNode.zPosition = 2
                 emojiNode.position = CGPoint(x: x, y: y)
-                //add to array of cells -- then add to game board
                 gameArray.append((node: emojiNode, point: Point(j, i)))
                 gameBG.addChild(emojiNode)
-                //iterate x
                 x += cellSize
             }
-            //reset x, iterate y
             x = CGFloat(width / -2) + (cellSize / 2)
             y -= cellSize
         }
@@ -178,12 +203,32 @@ class GameScene: SKScene {
         currentScore.run(scaleOutAction) {
             self.currentScore.isHidden = true
         }
+        currentScoreView.run(scaleOutAction) {
+            self.currentScoreView.isHidden = true
+        }
         gameBG.run(scaleOutAction) {
+            self.totalScore.text = "Total Score: \(ScoreManager.shared.getPoints())"
             self.gameBG.isHidden = true
             self.gameLogo.isHidden = false
+            self.totalScore.isHidden = false
+            self.totalScoreView.isHidden = false
             self.gameLogo.run(self.moveBackFromTopAction) {
                 self.playButton.isHidden = false
-                self.playButton.run(self.scaleInAction)
+                self.playButton.run(SKAction.group([
+                    SKAction.scale(to: 0.3, duration: 0.3),
+                    SKAction.fadeIn(withDuration: 0.3),
+                    SKAction.rotate(toAngle: 0, duration: 0.3)
+                ]))
+                self.totalScore.run(SKAction.group([
+                    SKAction.scale(to: 1, duration: 0.3),
+                    SKAction.fadeIn(withDuration: 0.3),
+                    SKAction.rotate(toAngle: 0, duration: 0.3)
+                ]))
+                self.totalScoreView.run(SKAction.group([
+                    SKAction.scale(to: 1, duration: 0.3),
+                    SKAction.fadeIn(withDuration: 0.3),
+                    SKAction.rotate(toAngle: 0, duration: 0.3)
+                ]))
             }
         }
     }

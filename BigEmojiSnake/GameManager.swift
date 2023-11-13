@@ -22,8 +22,18 @@ class GameManager {
     private var scorePos: Point?
     private var currentScore: Int = 0
     
-    let emojis: [String] = ["🍎", "🍌", "🍇", "🍓", "🍊", "🥕", "🍔", "🍕", "🍟", "🍩"]
-
+    private var currentEmoji = 0
+    private var snakeEmojis: [String] = ["🍆", "🍅", "🥒"]
+    
+    private var emojis: [String] = [
+        "🍎", "🍌", "🍇", "🍓", "🍊", "🥕", "🍔", "🍕", "🍟", "🍩",
+        "🍏", "🍒", "🍈", "🍑", "🍋", "🥦", "🍗", "🍖", "🍭", "🍰",
+        "🥝", "🥥", "🍆", "🍅", "🥒", "🌽", "🥔", "🍠", "🥖", "🥨",
+        "😍", "😇", "😂", "😅", "🥹", "🥳", "😎", "🤪", "😛", "🥺",
+        "🤩", "😢", "😭", "🤬", "🥵", "😱", "🫡", "😈", "👻", "💩",
+        "👾", "😻", "🎃", "🧚", "🎩", "🐶", "🦊", "🐻", "🦁", "💧",
+        "🐸", "🐔", "🐵", "🐙", "🍀", "🌸", "🌚", "🪐", "🔥", "⚡️",
+    ]
     
     init(scene: GameScene, numRows: Int, numCols: Int) {
         self.scene = scene
@@ -32,7 +42,6 @@ class GameManager {
     }
     
     func initGame() {
-        //starting player position
         playerPositions.append(Point(10, 10))
         playerPositions.append(Point(10, 11))
         playerPositions.append(Point(10, 12))
@@ -40,7 +49,7 @@ class GameManager {
         renderChange()
         generateNewScorePos()
     }
-
+    
     func update(time: Double) {
         if nextTime == nil {
             nextTime = time + timeExtension
@@ -50,9 +59,9 @@ class GameManager {
                 updatePlayerPosition()
                 checkForScore()
                 checkPlayerDied()
-            } else if playerPositions.count == 0 && playerDirection == .DIED { // If no more snake and died
+            } else if playerPositions.count == 0 && playerDirection == .DIED {
                 playerPositions.removeAll()
-                playerDirection = .LEFT // Change direction
+                playerDirection = .LEFT
                 renderChange()
                 scene.finishAnimation()
             }
@@ -69,7 +78,6 @@ class GameManager {
     }
     
     private func updatePlayerPosition() {
-        // Init changes like if user died
         var xChange = 0
         var yChange = 0
         if playerDirection == .LEFT {
@@ -81,7 +89,7 @@ class GameManager {
         } else if playerDirection == .DOWN {
             yChange = 1
         }
-
+        
         if playerPositions.count > 0 {
             if playerDirection == .DIED {
                 playerPositions.removeLast()
@@ -97,7 +105,6 @@ class GameManager {
                 )
             }
         }
-        // Avoid snake go outside screen
         if playerPositions.count > 0 {
             let x = playerPositions[0].x
             let y = playerPositions[0].y
@@ -118,11 +125,17 @@ class GameManager {
     func checkForScore() {
         if scorePos != nil && playerPositions.count > 0 {
             let playerPos: Point = playerPositions[0]
-            if playerPos.equals(scorePos!) { // Player hit scorePos
+            if playerPos.equals(scorePos!) {
                 currentScore += 1
                 scene.currentScore.text = "Score: \(currentScore)"
                 generateNewScorePos()
                 playerPositions.append(playerPositions.last!)
+                snakeEmojis.append(emojis[currentEmoji])
+                currentEmoji += 1
+                ScoreManager.shared.addPoints(1)
+                if currentEmoji > 70 {
+                    currentEmoji = 0
+                }
             }
         }
     }
@@ -146,7 +159,7 @@ class GameManager {
             }
         }
     }
-
+    
     func renderChange() {
         for (node, point) in scene.gameArray {
             let isScorePos = scorePos != nil && point.equals(scorePos!)
@@ -154,20 +167,20 @@ class GameManager {
             
             if isPlayerPos && playerDirection != .DIED {
                 node.id = 1
-                node.emojiLabel.text = "🟩"
+                node.emojiLabel.text = snakeEmojis[playerPositions.firstIndex(of: point)!]
             } else if isScorePos {
                 node.id = -2
-                node.emojiLabel.text = "🟥"
+                node.emojiLabel.text = emojis[currentEmoji]
             } else if isPlayerPos && playerDirection == .DIED {
                 node.id = 0
-                node.emojiLabel.text = "🟧"
+                node.emojiLabel.text = "🤡"
             } else {
                 node.id = -1
                 node.emojiLabel.text = " "
             }
         }
     }
-
+    
     func contains(allPoint: [Point], point: Point) -> Bool {
         for p in allPoint {
             if point.x == p.x && point.y == p.y { return true }

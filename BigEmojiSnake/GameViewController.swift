@@ -14,21 +14,30 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
+        let skview = SKView(frame: self.view.frame)
             if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
+                skview.presentScene(scene)
             }
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
-        }
+            skview.ignoresSiblingOrder = true
+        view.addSubview(skview)
+        
+        let secretButton = UIButton(type: .custom)
+        secretButton.setImage(UIImage(named: "btn_back"), for: .normal)
+        secretButton.imageView?.contentMode = .scaleAspectFit
+        secretButton.translatesAutoresizingMaskIntoConstraints = false
+        secretButton.addAction(UIAction(handler: {_ in
+            self.dismiss(animated: true)
+        }), for: .touchUpInside)
+        view.addSubview(secretButton)
+        
+        NSLayoutConstraint.activate([
+            secretButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
+            secretButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 8),
+            secretButton.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.2),
+            secretButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.2),
+        ])
+
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

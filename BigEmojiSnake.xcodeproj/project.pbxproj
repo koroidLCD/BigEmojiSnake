@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048570CB2B026A28004BC753 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048570CA2B026A28004BC753 /* ScoreManager.swift */; };
+		048570CD2B026B93004BC753 /* RewardsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048570CC2B026B93004BC753 /* RewardsVC.swift */; };
+		048570D02B026D70004BC753 /* LoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048570CF2B026D70004BC753 /* LoadingVC.swift */; };
+		048570D42B02704C004BC753 /* Wh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048570D32B02704C004BC753 /* Wh.swift */; };
+		048570FD2B02CD2E004BC753 /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 048570FC2B02CD2E004BC753 /* codemagic.yaml */; };
+		04B568B72AFBB3DC0021FF26 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B568B62AFBB3DC0021FF26 /* MenuViewController.swift */; };
 		04F1ABE22AF3BE5D000A55CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1ABE12AF3BE5D000A55CE /* AppDelegate.swift */; };
 		04F1ABE42AF3BE5D000A55CE /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 04F1ABE32AF3BE5D000A55CE /* GameScene.sks */; };
 		04F1ABE62AF3BE5D000A55CE /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 04F1ABE52AF3BE5D000A55CE /* Actions.sks */; };
@@ -17,9 +23,18 @@
 		04F1ABF22AF3BE5E000A55CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F1ABF02AF3BE5E000A55CE /* LaunchScreen.storyboard */; };
 		04F1ABFA2AF3BEAF000A55CE /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1ABF92AF3BEAF000A55CE /* GameManager.swift */; };
 		04F1ABFC2AF3C8A9000A55CE /* EmojiShapeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1ABFB2AF3C8A9000A55CE /* EmojiShapeNode.swift */; };
+		DE5D21D312EBF37F61657CC8 /* Pods_BigEmojiSnake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C5CC122C540B04DDE2C4F6 /* Pods_BigEmojiSnake.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		048570CA2B026A28004BC753 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
+		048570CC2B026B93004BC753 /* RewardsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsVC.swift; sourceTree = "<group>"; };
+		048570CE2B026D08004BC753 /* BigEmojiSnake.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BigEmojiSnake.entitlements; sourceTree = "<group>"; };
+		048570CF2B026D70004BC753 /* LoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingVC.swift; sourceTree = "<group>"; };
+		048570D12B026DD8004BC753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		048570D32B02704C004BC753 /* Wh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wh.swift; sourceTree = "<group>"; };
+		048570FC2B02CD2E004BC753 /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
+		04B568B62AFBB3DC0021FF26 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		04F1ABDE2AF3BE5D000A55CE /* BigEmojiSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigEmojiSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F1ABE12AF3BE5D000A55CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F1ABE32AF3BE5D000A55CE /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -31,6 +46,9 @@
 		04F1ABF12AF3BE5E000A55CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04F1ABF92AF3BEAF000A55CE /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		04F1ABFB2AF3C8A9000A55CE /* EmojiShapeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiShapeNode.swift; sourceTree = "<group>"; };
+		29901E562D807C64EA5CFBA0 /* Pods-BigEmojiSnake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigEmojiSnake.debug.xcconfig"; path = "Target Support Files/Pods-BigEmojiSnake/Pods-BigEmojiSnake.debug.xcconfig"; sourceTree = "<group>"; };
+		8F31F1AA80B0187DD8470648 /* Pods-BigEmojiSnake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigEmojiSnake.release.xcconfig"; path = "Target Support Files/Pods-BigEmojiSnake/Pods-BigEmojiSnake.release.xcconfig"; sourceTree = "<group>"; };
+		A8C5CC122C540B04DDE2C4F6 /* Pods_BigEmojiSnake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BigEmojiSnake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE5D21D312EBF37F61657CC8 /* Pods_BigEmojiSnake.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,8 +66,11 @@
 		04F1ABD52AF3BE5D000A55CE = {
 			isa = PBXGroup;
 			children = (
+				048570FC2B02CD2E004BC753 /* codemagic.yaml */,
 				04F1ABE02AF3BE5D000A55CE /* BigEmojiSnake */,
 				04F1ABDF2AF3BE5D000A55CE /* Products */,
+				37F2B0590CABC6B5F84087C4 /* Pods */,
+				817A7E2458E48EB2FE174C93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,7 +85,7 @@
 		04F1ABE02AF3BE5D000A55CE /* BigEmojiSnake */ = {
 			isa = PBXGroup;
 			children = (
-				04F1ABF82AF3BEA4000A55CE /* New Group */,
+				048570CE2B026D08004BC753 /* BigEmojiSnake.entitlements */,
 				04F1ABE12AF3BE5D000A55CE /* AppDelegate.swift */,
 				04F1ABE32AF3BE5D000A55CE /* GameScene.sks */,
 				04F1ABE52AF3BE5D000A55CE /* Actions.sks */,
@@ -74,15 +96,31 @@
 				04F1ABF02AF3BE5E000A55CE /* LaunchScreen.storyboard */,
 				04F1ABF92AF3BEAF000A55CE /* GameManager.swift */,
 				04F1ABFB2AF3C8A9000A55CE /* EmojiShapeNode.swift */,
+				04B568B62AFBB3DC0021FF26 /* MenuViewController.swift */,
+				048570CA2B026A28004BC753 /* ScoreManager.swift */,
+				048570CC2B026B93004BC753 /* RewardsVC.swift */,
+				048570CF2B026D70004BC753 /* LoadingVC.swift */,
+				048570D12B026DD8004BC753 /* Info.plist */,
+				048570D32B02704C004BC753 /* Wh.swift */,
 			);
 			path = BigEmojiSnake;
 			sourceTree = "<group>";
 		};
-		04F1ABF82AF3BEA4000A55CE /* New Group */ = {
+		37F2B0590CABC6B5F84087C4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				29901E562D807C64EA5CFBA0 /* Pods-BigEmojiSnake.debug.xcconfig */,
+				8F31F1AA80B0187DD8470648 /* Pods-BigEmojiSnake.release.xcconfig */,
 			);
-			path = "New Group";
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		817A7E2458E48EB2FE174C93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8C5CC122C540B04DDE2C4F6 /* Pods_BigEmojiSnake.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04F1ABF52AF3BE5E000A55CE /* Build configuration list for PBXNativeTarget "BigEmojiSnake" */;
 			buildPhases = (
+				F1511853364B957512E74DCE /* [CP] Check Pods Manifest.lock */,
 				04F1ABDA2AF3BE5D000A55CE /* Sources */,
 				04F1ABDB2AF3BE5D000A55CE /* Frameworks */,
 				04F1ABDC2AF3BE5D000A55CE /* Resources */,
+				BD81ADBDCEDDB36AE6669892 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,12 +186,55 @@
 				04F1ABED2AF3BE5D000A55CE /* Main.storyboard in Resources */,
 				04F1ABE42AF3BE5D000A55CE /* GameScene.sks in Resources */,
 				04F1ABEF2AF3BE5E000A55CE /* Assets.xcassets in Resources */,
+				048570FD2B02CD2E004BC753 /* codemagic.yaml in Resources */,
 				04F1ABF22AF3BE5E000A55CE /* LaunchScreen.storyboard in Resources */,
 				04F1ABE62AF3BE5D000A55CE /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BD81ADBDCEDDB36AE6669892 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BigEmojiSnake/Pods-BigEmojiSnake-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BigEmojiSnake/Pods-BigEmojiSnake-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BigEmojiSnake/Pods-BigEmojiSnake-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1511853364B957512E74DCE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BigEmojiSnake-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04F1ABDA2AF3BE5D000A55CE /* Sources */ = {
@@ -161,8 +244,13 @@
 				04F1ABE82AF3BE5D000A55CE /* GameScene.swift in Sources */,
 				04F1ABFA2AF3BEAF000A55CE /* GameManager.swift in Sources */,
 				04F1ABFC2AF3C8A9000A55CE /* EmojiShapeNode.swift in Sources */,
+				04B568B72AFBB3DC0021FF26 /* MenuViewController.swift in Sources */,
+				048570CB2B026A28004BC753 /* ScoreManager.swift in Sources */,
 				04F1ABEA2AF3BE5D000A55CE /* GameViewController.swift in Sources */,
 				04F1ABE22AF3BE5D000A55CE /* AppDelegate.swift in Sources */,
+				048570CD2B026B93004BC753 /* RewardsVC.swift in Sources */,
+				048570D42B02704C004BC753 /* Wh.swift in Sources */,
+				048570D02B026D70004BC753 /* LoadingVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,55 +397,77 @@
 		};
 		04F1ABF62AF3BE5E000A55CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29901E562D807C64EA5CFBA0 /* Pods-BigEmojiSnake.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = BigEmojiSnake/BigEmojiSnake.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BigEmojiSnake/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Big-Bamboo-Emoji";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.strategy-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.technics.BigEmojiSnake;
+				PRODUCT_BUNDLE_IDENTIFIER = com.koroid.BigEmojiSnake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		04F1ABF72AF3BE5E000A55CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F31F1AA80B0187DD8470648 /* Pods-BigEmojiSnake.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = BigEmojiSnake/BigEmojiSnake.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BigEmojiSnake/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Big-Bamboo-Emoji";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.strategy-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.technics.BigEmojiSnake;
+				PRODUCT_BUNDLE_IDENTIFIER = com.koroid.BigEmojiSnake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
